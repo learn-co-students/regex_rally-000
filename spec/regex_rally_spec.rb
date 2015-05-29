@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Working with Regular expressions" do
   it "matches character string" do
-    my_regex = //
+    my_regex = /foo/
     match = %w{ afoot catfoot dogfoot fanfoot
     foody foolery foolish fooster footage
     foothot footle footpad footway hotfoot
@@ -23,7 +23,7 @@ describe "Working with Regular expressions" do
   end
 
   it "uses anchors for matching" do
-    my_regex = //
+    my_regex = /ick\z/
 
     match = %w{ Mick Rick allocochick backtrick bestick
     candlestick counterprick heartsick lampwick
@@ -48,7 +48,7 @@ describe "Working with Regular expressions" do
   end
 
   it "Uses ranges for matching" do
-    my_regex = //
+    my_regex = /^[a-f]+$/
     match = %w{ abac accede adead babe
     bead bebed bedad bedded bedead bedeaf
     caba caffa dace dade daff dead deed deface
@@ -70,7 +70,7 @@ describe "Working with Regular expressions" do
 
   it "matches valid email address" do
     # Don't use the crazy one from the RFC!
-    my_regex = //
+    my_regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
     match = %w{steven@flatironschool.com john.doe@example.com phil@example.co.uk }
     do_not_match = ["steven@flatironschool", "user at example.com", "user@example.com@example.com"]
@@ -85,7 +85,7 @@ describe "Working with Regular expressions" do
   end
 
   it "matches valid US phone numbers regardless of format" do
-    my_regex = //
+    my_regex = /^\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})$/
     match = ["702-386-5397", "2128675309", "(212) 867-5309"]
     do_not_match = ["123", "this isn't a number", "12345678900000"]
 

@@ -139,7 +139,7 @@ describe "Working with Regular expressions" do
       do_not_match = ["123", "this isn't a number", "12345678900000", "abcdefghij", "123456789a"]
 
       match.each do |word|
-        expect(word.scan(my_regex).length) to eq(10)
+        expect(word.scan(my_regex).length).to eq(10)
       end
 
       do_not_match.each do |word|
